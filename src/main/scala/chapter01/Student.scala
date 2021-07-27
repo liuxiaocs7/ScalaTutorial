@@ -9,7 +9,7 @@ package chapter01
  * 伴生类和伴生对象名称必须一样并且必须定义在同一个文件中
  * 伴生类的所有东西都会在入口类Student中，伴生对象的所有有关东西都会在Student$这个类中
  */
-class Student(name: String, age: Int) {
+class Student(var name: String, var age: Int) {
   def printInfo(): Unit = {
     println(name + " " + age + " " + Student.school)
   }
