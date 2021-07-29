@@ -1,5 +1,6 @@
 package chapter04
 
+import scala.collection.immutable
 import scala.language.postfixOps
 
 object Test02_ForLoop {
@@ -128,6 +129,42 @@ object Test02_ForLoop {
 
     println("*" * 30)
 
+    // 6. 循环引入变量
+    for (i <- 1 to 10) {
+      val j = 10 - i
+      println("i = " + i + ", j = " + j)
+    }
 
+    println("*" * 30)
+
+    // 直接定义出来
+    for(i <- 1 to 10; j = 10 - i) {
+      println("i = " + i + ", j = " + j)
+    }
+
+    // 等价的另一种另一种写法
+    for {
+      i <- 1 to 10
+      j = 10 - i
+    }
+    {
+      println("i = " + i + ", j = " + j)
+    }
+
+    println("*" * 30)
+
+    // 7. 循环返回值
+    // for循环默认的返回类型都是空，即Unit，因为循环会执行多次，无法确认每次返回什么
+    val a: Unit = for (i <- 1 to 10) {
+      // println(i)
+      i
+    }
+    println("a = " + a)
+
+    // 利用特别的关键字，将结果放到一个集合中(多个答案的组合)
+    // 在当前循环中生成一个集合类型作为返回值返回
+    // 直接针对集合中的每个元素做某个操作
+    val b : immutable.IndexedSeq[Int] = for(i <- 1 to 10) yield i * 2
+    println("b = " + b)
   }
 }
