@@ -58,6 +58,7 @@ object Test01_IfElse {
 
     println("=" * 20)
     // 不需要返回值，即使最后一行是String也不影响
+    // 无论什么值都不会返回，最后的返回就是一个空Unit
     val result1: Unit = if (age <= 6) {
       println("童年")
       "童年"
