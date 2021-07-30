@@ -23,6 +23,7 @@ object Test01_FunctionAndMethod {
     println("Hi, " + name)
   }
 
+  // 定义有返回值的方法
   def sayHello(name: String): String = {
     println("Hello, " + name)
     return "Hello"

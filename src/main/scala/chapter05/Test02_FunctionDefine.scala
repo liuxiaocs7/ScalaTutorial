@@ -26,6 +26,8 @@ object Test02_FunctionDefine {
     }
     println(f3("alice"))
 
+    println("=" * 30)
+
     // (4) 函数4：有参，有返回值
     def f4(name: String): String = {
       println("4. 有参，有返回值 " + name)
@@ -33,12 +35,17 @@ object Test02_FunctionDefine {
     }
     println(f4("alice"))
 
+    println("=" * 30)
+
     // (5) 函数5：多参，无返回值
     def f5(name1: String, name2: String): Unit = {
       println("5. 多参，无返回值")
       println(s"${name1}和${name2}都是我的好朋友")
     }
     println(f5("alice", "bob"))
+
+    println("=" * 30)
+
     // (6) 函数6：多参，有返回值
     def f6(a: Int, b: Int): Int = {
       println("6. 多参，有返回值")
