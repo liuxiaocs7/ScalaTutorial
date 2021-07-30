@@ -53,5 +53,43 @@ object Test05_Lambda {
     // (5) 如果可以推断出，当前传入的println是一个函数体，而不是调用语句，可以直接省略下划线
     // println直接作为一个函数传递进去
     f(println)
+
+    println("=" * 40)
+
+    // 实际示例，定义一个二元运算函数，只操作1和2两个数，但是具体运算通过参数传入
+    // 最后一行的返回值就是整个函数的返回值，因此fun的返回值也应该是Int
+    def dualFunctionOneAndTwo(fun: (Int, Int) => Int): Int = {
+      fun(1, 2)
+    }
+
+    val add = (a: Int, b: Int) => a + b
+    val minus = (a: Int, b: Int) => a - b
+
+    println(dualFunctionOneAndTwo(add))
+    println(dualFunctionOneAndTwo(minus))
+
+    println("=" * 40)
+    // 匿名函数简化
+    println(dualFunctionOneAndTwo((a: Int, b: Int) => a + b))
+    println(dualFunctionOneAndTwo((a: Int, b: Int) => a - b))
+
+    println("=" * 40)
+
+    // a和b的类型都可以去掉
+    println(dualFunctionOneAndTwo((a, b) => a + b))
+    // 这就看起来就像将1和2进行做加法了
+    println(dualFunctionOneAndTwo( _ + _ ))
+
+    println("=" * 40)
+
+    println(dualFunctionOneAndTwo((a, b) => a - b))
+    println(dualFunctionOneAndTwo( _ - _ ))
+
+    println("=" * 40)
+
+    // 如果顺序不一样
+    println(dualFunctionOneAndTwo((a: Int, b: Int) => b - a))
+    println(dualFunctionOneAndTwo( -_ + _ ))
+
   }
 }
