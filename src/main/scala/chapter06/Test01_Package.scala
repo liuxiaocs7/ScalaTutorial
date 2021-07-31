@@ -33,11 +33,11 @@ package com {
 package aaa {
   package bbb {
 
-    // 导入Inner包
-    import com.liuxiaocs.scala.Inner
-
     object Test01_Package {
       def main(args: Array[String]): Unit = {
+
+        // 导入Inner包，只有main方法中能使用
+        import com.liuxiaocs.scala.Inner
         println(Inner.in)
       }
     }
