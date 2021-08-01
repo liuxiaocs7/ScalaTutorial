@@ -18,6 +18,10 @@ class Person13 {
   def sayHello(): Unit = {
     println("hello from: " + name)
   }
+
+  def increase(): Unit = {
+    println("person increase")
+  }
 }
 
 // 定义一个特质
